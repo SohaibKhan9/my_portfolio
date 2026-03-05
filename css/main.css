@@ -1,0 +1,217 @@
+.glass {
+    background: rgba(33, 66, 74, 0.2);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.text-gradient {
+    background: linear-gradient(to right, #06ccf9, #22d3ee);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.logo-script {
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+}
+.nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0;
+    transition: color 220ms ease, transform 220ms ease;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.28rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #06ccf9, #67e8f9);
+    border-radius: 9999px;
+    transform: scaleX(0.2);
+    transform-origin: left;
+    opacity: 0;
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms ease;
+}
+.nav-link:hover {
+    color: #06ccf9;
+    transform: translateY(-1px);
+    text-shadow: 0 0 16px rgba(6, 204, 249, 0.25);
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+section + section {
+    position: relative;
+}
+section + section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(86%, 980px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(6, 204, 249, 0.16) 20%, rgba(103, 232, 249, 0.58) 50%, rgba(6, 204, 249, 0.16) 80%, transparent 100%);
+    pointer-events: none;
+}
+section + section::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translateX(-50%) rotate(45deg);
+    border-radius: 1px;
+    background: rgba(103, 232, 249, 0.8);
+    box-shadow: 0 0 14px rgba(6, 204, 249, 0.35);
+    pointer-events: none;
+}
+html:not(.dark) section + section::before {
+    background: linear-gradient(90deg, transparent 0%, rgba(6, 204, 249, 0.12) 20%, rgba(6, 204, 249, 0.38) 50%, rgba(6, 204, 249, 0.12) 80%, transparent 100%);
+}
+html:not(.dark) section + section::after {
+    background: rgba(6, 204, 249, 0.62);
+    box-shadow: 0 0 12px rgba(6, 204, 249, 0.22);
+}
+.theme-toggle {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 60;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 31, 35, 0.82);
+    border: 1px solid rgba(6, 204, 249, 0.32);
+    color: #67e8f9;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 24px rgba(2, 12, 16, 0.35);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.theme-toggle:hover {
+    transform: translateY(-2px) scale(1.04);
+    border-color: rgba(6, 204, 249, 0.75);
+    box-shadow: 0 16px 28px rgba(2, 12, 16, 0.45);
+}
+html:not(.dark) .theme-toggle {
+    background: rgba(255, 255, 255, 0.92);
+    color: #0f1f23;
+    border-color: rgba(15, 31, 35, 0.12);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+}
+html:not(.dark) .glass {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+html:not(.dark) .bg-slate-800\/50 {
+    background-color: rgba(15, 23, 42, 0.05) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+html:not(.dark) .bg-slate-800\/30 {
+    background-color: rgba(15, 23, 42, 0.04) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+html:not(.dark) .bg-slate-800 {
+    background-color: rgba(15, 23, 42, 0.06) !important;
+}
+html:not(.dark) #services {
+    background: linear-gradient(180deg, #f8fbfc 0%, #eef6f8 100%);
+}
+html:not(.dark) #services h2,
+html:not(.dark) #services h3 {
+    color: #0f172a;
+}
+html:not(.dark) #services .text-slate-400 {
+    color: #475569;
+}
+html:not(.dark) #services .bg-slate-800\/50 {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+html:not(.dark) #services .bg-slate-800\/50:hover {
+    border-color: rgba(6, 204, 249, 0.45) !important;
+    box-shadow: 0 14px 28px rgba(6, 204, 249, 0.12);
+}
+html:not(.dark) #contact input,
+html:not(.dark) #contact textarea {
+    background: #ffffff !important;
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+}
+html:not(.dark) #contact input::placeholder,
+html:not(.dark) #contact textarea::placeholder {
+    color: #64748b;
+}
+html:not(.dark) .text-white {
+    color: #0f172a;
+}
+.reveal-item {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+    filter: blur(6px);
+    will-change: transform, opacity, filter;
+    transition:
+        opacity 780ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 780ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 780ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-item.anim-slide-left {
+    transform: translateX(-44px) scale(0.98);
+}
+.reveal-item.anim-slide-right {
+    transform: translateX(44px) scale(0.98);
+}
+.reveal-item.anim-lift {
+    transform: translateY(30px) scale(0.98);
+    filter: blur(7px);
+}
+.reveal-item.anim-zoom {
+    transform: scale(0.9);
+    filter: blur(5px);
+}
+.reveal-item.anim-tilt-left {
+    transform: translateY(24px) rotate(-2.2deg) scale(0.97);
+    transform-origin: left center;
+}
+.reveal-item.anim-tilt-right {
+    transform: translateY(24px) rotate(2.2deg) scale(0.97);
+    transform-origin: right center;
+}
+.reveal-item.anim-soft-pop {
+    transform: translateY(18px) scale(0.94);
+    filter: blur(4px);
+}
+.reveal-item.anim-blur-rise {
+    transform: translateY(22px);
+    filter: blur(10px);
+}
+.reveal-item.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    filter: blur(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal-item,
+    .reveal-item.anim-slide-left,
+    .reveal-item.anim-slide-right,
+    .reveal-item.anim-lift,
+    .reveal-item.anim-zoom,
+    .reveal-item.anim-tilt-left,
+    .reveal-item.anim-tilt-right,
+    .reveal-item.anim-soft-pop,
+    .reveal-item.anim-blur-rise {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: none;
+    }
+}
